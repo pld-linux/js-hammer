@@ -28,6 +28,8 @@ Add touch gestures to your page.
 %prep
 %setup -qn hammer.js-%{version}
 
+%{__sed} -i -e '/# sourceMappingURL=/d' %{pkgname}.min.js
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_appdir}
